@@ -15,6 +15,9 @@
         <module>yjlmall-order</module>
         <module>yjlmall-product</module>
         <module>yjlmall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>yjlmall-common</module>
     </modules>
 
 </project>
