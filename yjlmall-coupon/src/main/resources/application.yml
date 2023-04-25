@@ -2,11 +2,21 @@ server:
   port: 7000
 
 spring:
+  application:
+    name: yjlmall-coupon
   datasource:
     username: root
     password: 123456
     url: jdbc:mysql://192.168.56.20:3306/yjlmall-sms
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.20:8848
+      config:
+        server-addr: 192.168.56.20:8848
+        namespace: 00c3e354-bf68-44da-81a8-04b1bab48f46
+        group: dev
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
