@@ -1,0 +1,17 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: yjlmall-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.20:8848
+      config:
+        server-addr: 192.168.56.20:8848
+        namespace: 00c3e354-bf68-44da-81a8-04b1bab48f46
+        group: dev
+  config:
+    import:
+      - optional:naocs:oss.yml?refreshEnabled=true

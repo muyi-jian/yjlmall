@@ -1,0 +1,51 @@
+server:
+  port: 88
+spring:
+  application:
+    name: yjlmall-gateway
+  cloud:
+    #配置nacos
+    nacos:
+      discovery:
+        server-addr: 192.168.56.20:8848
+      config:
+        server-addr: 192.168.56.20:8848
+        namespace: fb81a746-2ae7-4fe5-895a-4b80adf4b55c
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://yjlmall-product #lb表示使用nacos本地的负载均衡策略
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+          # 对于请求路径 /api/product/**，当前的配置在请求到到达前会被重写为 /**
+        - id: third_party_route
+          uri: lb://gulimall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+        - id: member_route
+          uri: lb://gulimall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://gulimall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+

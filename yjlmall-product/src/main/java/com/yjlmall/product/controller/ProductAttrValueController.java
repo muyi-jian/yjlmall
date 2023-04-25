@@ -1,19 +1,16 @@
 package com.yjlmall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.yjlmall.product.entity.ProductAttrValueEntity;
-import com.yjlmall.product.service.ProductAttrValueService;
 import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
+import com.yjlmall.product.entity.ProductAttrValueEntity;
+import com.yjlmall.product.service.ProductAttrValueService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
@@ -23,11 +20,22 @@ import com.yjlmall.common.utils.R;
  * @email 2628168756@qq.com
  * @date 2023-04-21 20:27:32
  */
+@RefreshScope
 @RestController
 @RequestMapping("product/productattrvalue")
 public class ProductAttrValueController {
     @Autowired
     private ProductAttrValueService productAttrValueService;
+
+    @Value("${product.user.name:gggg}")
+    private String username;
+    @Value("${product.user.age:11}")
+    private String age;
+
+    @GetMapping("/getName")
+    public R getName(){
+        return R.ok().put("username", username);
+    }
 
     /**
      * 列表

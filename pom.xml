@@ -18,6 +18,8 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>yjlmall-common</module>
+        <module>yjlmall-gateway</module>
+        <module>yjlmall-third-party</module>
     </modules>
 
 </project>
