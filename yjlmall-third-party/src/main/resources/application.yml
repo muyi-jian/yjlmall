@@ -14,4 +14,11 @@ spring:
         group: dev
   config:
     import:
-      - optional:naocs:oss.yml?refreshEnabled=true
+      - optional:nacos:oss.yml?refreshEnabled=true
+alibaba:
+  cloud:
+    access-key: LTAI5tJpbjY9NJJbYaPis5jJ
+    secret-key: KbdfDJGeuL97YCy1mhLdE63aWCoAUO
+    oss:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      bucket: yjlmall

@@ -26,7 +26,6 @@ public class Query<T> {
     public IPage<T> getPage(Map<String, Object> params) {
         return this.getPage(params, null, false);
     }
-
     public IPage<T> getPage(Map<String, Object> params, String defaultOrderField, boolean isAsc) {
         //分页参数
         long curPage = 1;
