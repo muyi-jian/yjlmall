@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 商品阶梯价格
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:29:31
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RestController
 @RequestMapping("coupon/skuladder")
@@ -34,7 +35,7 @@ public class SkuLadderController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:skuladder:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuLadderService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class SkuLadderController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:skuladder:info")
-    public R info(@PathVariable("id") Long id) {
-            SkuLadderEntity skuLadder = skuLadderService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		SkuLadderEntity skuLadder = skuLadderService.getById(id);
 
         return R.ok().put("skuLadder", skuLadder);
     }
@@ -57,8 +58,8 @@ public class SkuLadderController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:skuladder:save")
-    public R save(@RequestBody SkuLadderEntity skuLadder) {
-            skuLadderService.save(skuLadder);
+    public R save(@RequestBody SkuLadderEntity skuLadder){
+		skuLadderService.save(skuLadder);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class SkuLadderController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:skuladder:update")
-    public R update(@RequestBody SkuLadderEntity skuLadder) {
-            skuLadderService.updateById(skuLadder);
+    public R update(@RequestBody SkuLadderEntity skuLadder){
+		skuLadderService.updateById(skuLadder);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class SkuLadderController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:skuladder:delete")
-    public R delete(@RequestBody Long[] ids) {
-            skuLadderService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		skuLadderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 退款信息
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:11:10
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @RestController
 @RequestMapping("order/refundinfo")
@@ -34,7 +35,7 @@ public class RefundInfoController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("order:refundinfo:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = refundInfoService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class RefundInfoController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("order:refundinfo:info")
-    public R info(@PathVariable("id") Long id) {
-            RefundInfoEntity refundInfo = refundInfoService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		RefundInfoEntity refundInfo = refundInfoService.getById(id);
 
         return R.ok().put("refundInfo", refundInfo);
     }
@@ -57,8 +58,8 @@ public class RefundInfoController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("order:refundinfo:save")
-    public R save(@RequestBody RefundInfoEntity refundInfo) {
-            refundInfoService.save(refundInfo);
+    public R save(@RequestBody RefundInfoEntity refundInfo){
+		refundInfoService.save(refundInfo);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class RefundInfoController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("order:refundinfo:update")
-    public R update(@RequestBody RefundInfoEntity refundInfo) {
-            refundInfoService.updateById(refundInfo);
+    public R update(@RequestBody RefundInfoEntity refundInfo){
+		refundInfoService.updateById(refundInfo);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class RefundInfoController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("order:refundinfo:delete")
-    public R delete(@RequestBody Long[] ids) {
-            refundInfoService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		refundInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

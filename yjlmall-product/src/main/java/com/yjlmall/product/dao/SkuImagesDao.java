@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * sku图片
  * 
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:27:32
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 @Mapper
 public interface SkuImagesDao extends BaseMapper<SkuImagesEntity> {

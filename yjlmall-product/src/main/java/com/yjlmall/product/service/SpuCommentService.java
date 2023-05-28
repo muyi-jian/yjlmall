@@ -1,17 +1,17 @@
 package com.yjlmall.product.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.product.entity.SpuCommentEntity;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
 
 /**
  * 商品评价
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:27:32
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 public interface SpuCommentService extends IService<SpuCommentEntity> {
 

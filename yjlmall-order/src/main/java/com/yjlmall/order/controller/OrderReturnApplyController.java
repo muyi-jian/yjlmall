@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 订单退货申请
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:11:10
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @RestController
 @RequestMapping("order/orderreturnapply")
@@ -34,7 +35,7 @@ public class OrderReturnApplyController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("order:orderreturnapply:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderReturnApplyService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class OrderReturnApplyController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("order:orderreturnapply:info")
-    public R info(@PathVariable("id") Long id) {
-            OrderReturnApplyEntity orderReturnApply = orderReturnApplyService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		OrderReturnApplyEntity orderReturnApply = orderReturnApplyService.getById(id);
 
         return R.ok().put("orderReturnApply", orderReturnApply);
     }
@@ -57,8 +58,8 @@ public class OrderReturnApplyController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("order:orderreturnapply:save")
-    public R save(@RequestBody OrderReturnApplyEntity orderReturnApply) {
-            orderReturnApplyService.save(orderReturnApply);
+    public R save(@RequestBody OrderReturnApplyEntity orderReturnApply){
+		orderReturnApplyService.save(orderReturnApply);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class OrderReturnApplyController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("order:orderreturnapply:update")
-    public R update(@RequestBody OrderReturnApplyEntity orderReturnApply) {
-            orderReturnApplyService.updateById(orderReturnApply);
+    public R update(@RequestBody OrderReturnApplyEntity orderReturnApply){
+		orderReturnApplyService.updateById(orderReturnApply);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class OrderReturnApplyController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("order:orderreturnapply:delete")
-    public R delete(@RequestBody Long[] ids) {
-            orderReturnApplyService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		orderReturnApplyService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

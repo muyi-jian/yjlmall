@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 订单
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:11:10
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @RestController
 @RequestMapping("order/order")
@@ -34,7 +35,7 @@ public class OrderController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("order:order:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class OrderController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("order:order:info")
-    public R info(@PathVariable("id") Long id) {
-            OrderEntity order = orderService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		OrderEntity order = orderService.getById(id);
 
         return R.ok().put("order", order);
     }
@@ -57,8 +58,8 @@ public class OrderController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("order:order:save")
-    public R save(@RequestBody OrderEntity order) {
-            orderService.save(order);
+    public R save(@RequestBody OrderEntity order){
+		orderService.save(order);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class OrderController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("order:order:update")
-    public R update(@RequestBody OrderEntity order) {
-            orderService.updateById(order);
+    public R update(@RequestBody OrderEntity order){
+		orderService.updateById(order);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class OrderController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("order:order:delete")
-    public R delete(@RequestBody Long[] ids) {
-            orderService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		orderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

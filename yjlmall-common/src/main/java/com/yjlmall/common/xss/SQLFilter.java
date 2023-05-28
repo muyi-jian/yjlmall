@@ -8,7 +8,7 @@
 
 package com.yjlmall.common.xss;
 
-import com.yjlmall.common.exception.RRException;
+import com.yjlmall.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

@@ -1,14 +1,12 @@
 import http from '@/utils/httpRequest.js'
-
-export default policy()
-{
-  return new Promise((resolve, reject) => {
+export function policy() {
+  return  new Promise((resolve,reject)=>{
     http({
-      url: http.adornUrl("/thirdparty/oss/policy"),
-      method: 'get',
+      url: http.adornUrl("/thirdParty/oss/policy"),
+      method: "get",
       params: http.adornParams({})
-    }).then(({data}) => {
+    }).then(({ data }) => {
       resolve(data);
     })
-  })
+  });
 }

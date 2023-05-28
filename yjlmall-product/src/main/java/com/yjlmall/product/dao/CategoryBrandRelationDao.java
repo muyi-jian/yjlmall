@@ -3,15 +3,18 @@ package com.yjlmall.product.dao;
 import com.yjlmall.product.entity.CategoryBrandRelationEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 品牌分类关联
  * 
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:27:32
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-11-17 21:25:25
  */
 @Mapper
 public interface CategoryBrandRelationDao extends BaseMapper<CategoryBrandRelationEntity> {
-	
+
+    void updateCategory(@Param("catId") Long catId, @Param("name") String name);
+
 }

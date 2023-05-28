@@ -14,7 +14,7 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
 /**
- * @className: GulimallCorsConfiguration
+ * @className: yjlmallCorsConfiguration
  * @author: muyi-jian
  * @date: 2023-05-01 14:46
  * @description: TODO

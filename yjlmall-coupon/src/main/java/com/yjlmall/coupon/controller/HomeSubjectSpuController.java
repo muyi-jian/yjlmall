@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 专题商品
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:29:31
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RestController
 @RequestMapping("coupon/homesubjectspu")
@@ -34,7 +35,7 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:homesubjectspu:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = homeSubjectSpuService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:homesubjectspu:info")
-    public R info(@PathVariable("id") Long id) {
-            HomeSubjectSpuEntity homeSubjectSpu = homeSubjectSpuService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		HomeSubjectSpuEntity homeSubjectSpu = homeSubjectSpuService.getById(id);
 
         return R.ok().put("homeSubjectSpu", homeSubjectSpu);
     }
@@ -57,8 +58,8 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:homesubjectspu:save")
-    public R save(@RequestBody HomeSubjectSpuEntity homeSubjectSpu) {
-            homeSubjectSpuService.save(homeSubjectSpu);
+    public R save(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
+		homeSubjectSpuService.save(homeSubjectSpu);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:homesubjectspu:update")
-    public R update(@RequestBody HomeSubjectSpuEntity homeSubjectSpu) {
-            homeSubjectSpuService.updateById(homeSubjectSpu);
+    public R update(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
+		homeSubjectSpuService.updateById(homeSubjectSpu);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:homesubjectspu:delete")
-    public R delete(@RequestBody Long[] ids) {
-            homeSubjectSpuService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		homeSubjectSpuService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

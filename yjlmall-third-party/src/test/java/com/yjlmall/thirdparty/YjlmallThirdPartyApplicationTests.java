@@ -45,7 +45,7 @@ class YjlmallThirdPartyApplicationTests {
         String accessKeyId = "xxx";
         String accessKeySecret = "xxx";
         // 填写Bucket名称，例如examplebucket。
-        String bucketName = "gulimall-zuhao";
+        String bucketName = "yjlmall-zuhao";
         // 填写Object完整路径，完整路径中不能包含Bucket名称，例如exampledir/exampleobject.txt。
         String objectName = "bj.png";
         // 填写本地文件的完整路径，例如D:\\localpath\\examplefile.txt。

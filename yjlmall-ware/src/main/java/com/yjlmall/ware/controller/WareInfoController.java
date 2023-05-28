@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 仓库信息
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:31:36
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:59:40
  */
 @RestController
 @RequestMapping("ware/wareinfo")
@@ -34,7 +35,7 @@ public class WareInfoController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("ware:wareinfo:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = wareInfoService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class WareInfoController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("ware:wareinfo:info")
-    public R info(@PathVariable("id") Long id) {
-            WareInfoEntity wareInfo = wareInfoService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		WareInfoEntity wareInfo = wareInfoService.getById(id);
 
         return R.ok().put("wareInfo", wareInfo);
     }
@@ -57,8 +58,8 @@ public class WareInfoController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("ware:wareinfo:save")
-    public R save(@RequestBody WareInfoEntity wareInfo) {
-            wareInfoService.save(wareInfo);
+    public R save(@RequestBody WareInfoEntity wareInfo){
+		wareInfoService.save(wareInfo);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class WareInfoController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("ware:wareinfo:update")
-    public R update(@RequestBody WareInfoEntity wareInfo) {
-            wareInfoService.updateById(wareInfo);
+    public R update(@RequestBody WareInfoEntity wareInfo){
+		wareInfoService.updateById(wareInfo);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class WareInfoController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("ware:wareinfo:delete")
-    public R delete(@RequestBody Long[] ids) {
-            wareInfoService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		wareInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

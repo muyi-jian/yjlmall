@@ -16,12 +16,13 @@ import com.yjlmall.common.utils.PageUtils;
 import com.yjlmall.common.utils.R;
 
 
+
 /**
  * 订单项信息
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:11:10
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @RestController
 @RequestMapping("order/orderitem")
@@ -34,7 +35,7 @@ public class OrderItemController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("order:orderitem:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderItemService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -46,8 +47,8 @@ public class OrderItemController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("order:orderitem:info")
-    public R info(@PathVariable("id") Long id) {
-            OrderItemEntity orderItem = orderItemService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		OrderItemEntity orderItem = orderItemService.getById(id);
 
         return R.ok().put("orderItem", orderItem);
     }
@@ -57,8 +58,8 @@ public class OrderItemController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("order:orderitem:save")
-    public R save(@RequestBody OrderItemEntity orderItem) {
-            orderItemService.save(orderItem);
+    public R save(@RequestBody OrderItemEntity orderItem){
+		orderItemService.save(orderItem);
 
         return R.ok();
     }
@@ -68,8 +69,8 @@ public class OrderItemController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("order:orderitem:update")
-    public R update(@RequestBody OrderItemEntity orderItem) {
-            orderItemService.updateById(orderItem);
+    public R update(@RequestBody OrderItemEntity orderItem){
+		orderItemService.updateById(orderItem);
 
         return R.ok();
     }
@@ -79,8 +80,8 @@ public class OrderItemController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("order:orderitem:delete")
-    public R delete(@RequestBody Long[] ids) {
-            orderItemService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		orderItemService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

@@ -5,44 +5,32 @@ import com.yjlmall.common.utils.R;
 import com.yjlmall.product.entity.ProductAttrValueEntity;
 import com.yjlmall.product.service.ProductAttrValueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Map;
 
 
+
 /**
  * spu属性值
  *
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:27:32
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 22:50:32
  */
-@RefreshScope
 @RestController
 @RequestMapping("product/productattrvalue")
 public class ProductAttrValueController {
     @Autowired
     private ProductAttrValueService productAttrValueService;
 
-    @Value("${product.user.name:gggg}")
-    private String username;
-    @Value("${product.user.age:11}")
-    private String age;
-
-    @GetMapping("/getName")
-    public R getName(){
-        return R.ok().put("username", username);
-    }
-
     /**
      * 列表
      */
     @RequestMapping("/list")
     //@RequiresPermissions("product:productattrvalue:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = productAttrValueService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -54,8 +42,8 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("product:productattrvalue:info")
-    public R info(@PathVariable("id") Long id) {
-            ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
 
         return R.ok().put("productAttrValue", productAttrValue);
     }
@@ -65,8 +53,8 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:productattrvalue:save")
-    public R save(@RequestBody ProductAttrValueEntity productAttrValue) {
-            productAttrValueService.save(productAttrValue);
+    public R save(@RequestBody ProductAttrValueEntity productAttrValue){
+		productAttrValueService.save(productAttrValue);
 
         return R.ok();
     }
@@ -76,8 +64,8 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:productattrvalue:update")
-    public R update(@RequestBody ProductAttrValueEntity productAttrValue) {
-            productAttrValueService.updateById(productAttrValue);
+    public R update(@RequestBody ProductAttrValueEntity productAttrValue){
+		productAttrValueService.updateById(productAttrValue);
 
         return R.ok();
     }
@@ -87,8 +75,8 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("product:productattrvalue:delete")
-    public R delete(@RequestBody Long[] ids) {
-            productAttrValueService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		productAttrValueService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

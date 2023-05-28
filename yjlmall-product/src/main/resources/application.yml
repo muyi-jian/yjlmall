@@ -2,6 +2,8 @@
 #  port: 11000
 
 spring:
+  main:
+    allow-circular-references: true
 #  datasource:
 #    username: root
 #    password: 123456
@@ -35,4 +37,6 @@ spring:
 #  global-config:
 #    db-config:
 #      id-type: auto
+
+
 

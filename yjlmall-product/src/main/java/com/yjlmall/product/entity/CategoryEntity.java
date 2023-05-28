@@ -10,13 +10,16 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
+
+
 /**
  * 商品三级分类
  * 
- * @author muyi-jian
- * @email 2628168756@qq.com
- * @date 2023-04-21 20:27:32
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:48
  */
+
 @Data
 @TableName("pms_category")
 public class CategoryEntity implements Serializable {
@@ -60,8 +63,11 @@ public class CategoryEntity implements Serializable {
 	 * 商品数量
 	 */
 	private Integer productCount;
+
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	@TableField(exist=false)
 	private List<CategoryEntity> children;
+
+
 
 }
