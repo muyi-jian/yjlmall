@@ -17,8 +17,8 @@ spring:
       - optional:nacos:oss.yml?refreshEnabled=true
 alibaba:
   cloud:
-    access-key: LTAI5tJpbjY9NJJbYaPis5jJ
-    secret-key: KbdfDJGeuL97YCy1mhLdE63aWCoAUO
+    access-key: xxxx
+    secret-key: xxxx
     oss:
       endpoint: oss-cn-beijing.aliyuncs.com
       bucket: yjlmall
